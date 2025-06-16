@@ -3,9 +3,10 @@ import { createZoomMeeting } from "@/lib/zoom-client"
 
 export async function GET() {
   try {
+    // Test the Zoom API by creating a test meeting
     const meeting = await createZoomMeeting({
       topic: "Test Meeting",
-      startTime: new Date(Date.now() + 3600000).toISOString(),
+      startTime: new Date(Date.now() + 3600000).toISOString(), // 1 hour from now
       duration: 30,
       agenda: "Testing Zoom API integration",
     })
