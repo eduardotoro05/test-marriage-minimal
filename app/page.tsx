@@ -1,162 +1,144 @@
 import Link from "next/link"
-import { Heart, Check, Star, Users, Calendar, Shield } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Heart className="h-6 w-6 text-rose-500" />
-            <span className="text-xl font-semibold">OnlineMarriagesNow</span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/how-it-works" className="text-sm font-medium">
-              How It Works
-            </Link>
-            <Link href="/pricing" className="text-sm font-medium">
-              Pricing
-            </Link>
-            <Link href="/faq" className="text-sm font-medium">
-              FAQ
-            </Link>
-            <Button asChild className="bg-rose-600 hover:bg-rose-700">
-              <Link href="/booking">Get Married Now</Link>
-            </Button>
-          </nav>
+      <header className="border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-6">
+            <div className="flex items-center">
+              <span className="text-2xl font-bold text-rose-600">OnlineMarriagesNow</span>
+            </div>
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/how-it-works" className="text-gray-500 hover:text-gray-900">
+                How It Works
+              </Link>
+              <Link href="/pricing" className="text-gray-500 hover:text-gray-900">
+                Pricing
+              </Link>
+              <Link href="/faq" className="text-gray-500 hover:text-gray-900">
+                FAQ
+              </Link>
+              <Link 
+                href="/booking" 
+                className="bg-rose-600 text-white px-4 py-2 rounded-md hover:bg-rose-700"
+              >
+                Get Married Now
+              </Link>
+            </nav>
+          </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 md:py-24 lg:py-32 xl:py-48">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                Get Married Online in Minutes
-              </h1>
-              <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                Legal online marriage ceremonies performed by licensed officiants. Quick, easy, and completely legitimate.
-              </p>
-            </div>
-            <div className="space-x-4">
-              <Button asChild size="lg" className="bg-rose-600 hover:bg-rose-700">
-                <Link href="/booking">Start Your Ceremony</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <Link href="/how-it-works">Learn More</Link>
-              </Button>
-            </div>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gray-900 sm:text-6xl">
+            Get Married Online in Minutes
+          </h1>
+          <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto">
+            Legal online marriage ceremonies performed by licensed officiants. Quick, easy, and completely legitimate.
+          </p>
+          <div className="mt-10 flex justify-center gap-4">
+            <Link 
+              href="/booking" 
+              className="bg-rose-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-rose-700"
+            >
+              Start Your Ceremony
+            </Link>
+            <Link 
+              href="/how-it-works" 
+              className="border border-gray-300 text-gray-700 px-8 py-3 rounded-md text-lg font-medium hover:bg-gray-50"
+            >
+              Learn More
+            </Link>
           </div>
         </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="py-12 md:py-24 lg:py-32 bg-gray-50">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-3 lg:gap-12">
-            <Card>
-              <CardHeader>
-                <Shield className="h-8 w-8 text-rose-600" />
-                <CardTitle>100% Legal</CardTitle>
-                <CardDescription>
-                  Fully licensed officiants and legally recognized marriage certificates
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Calendar className="h-8 w-8 text-rose-600" />
-                <CardTitle>Same Day Service</CardTitle>
-                <CardDescription>
-                  Get married today! Schedule your ceremony for as soon as right now
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Users className="h-8 w-8 text-rose-600" />
-                <CardTitle>Unlimited Guests</CardTitle>
-                <CardDescription>
-                  Invite as many family and friends as you want to witness your special day
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Simple, Transparent Pricing</h2>
-              <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                One low price includes everything you need for a legal marriage ceremony.
-              </p>
+        {/* Features */}
+        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="text-center">
+            <div className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-rose-600 text-2xl">✓</span>
             </div>
-            <Card className="w-full max-w-md">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Complete Ceremony</CardTitle>
-                <div className="text-4xl font-bold">$299</div>
-                <CardDescription>Everything included</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Licensed officiant</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Legal marriage certificate</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">30-minute ceremony</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Unlimited guests</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-green-500" />
-                    <span className="text-sm">Ceremony recording</span>
-                  </div>
-                </div>
-                <Button asChild className="w-full bg-rose-600 hover:bg-rose-700">
-                  <Link href="/booking">Book Your Ceremony</Link>
-                </Button>
-              </CardContent>
-            </Card>
+            <h3 className="text-xl font-semibold">100% Legal</h3>
+            <p className="text-gray-600 mt-2">Fully licensed officiants and legally recognized marriage certificates</p>
+          </div>
+          <div className="text-center">
+            <div className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-rose-600 text-2xl">⚡</span>
+            </div>
+            <h3 className="text-xl font-semibold">Same Day Service</h3>
+            <p className="text-gray-600 mt-2">Get married today! Schedule your ceremony for as soon as right now</p>
+          </div>
+          <div className="text-center">
+            <div className="bg-rose-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-rose-600 text-2xl">👥</span>
+            </div>
+            <h3 className="text-xl font-semibold">Unlimited Guests</h3>
+            <p className="text-gray-600 mt-2">Invite as many family and friends as you want to witness your special day</p>
           </div>
         </div>
-      </section>
+
+        {/* Pricing */}
+        <div className="mt-20 text-center">
+          <h2 className="text-3xl font-bold text-gray-900">Simple, Transparent Pricing</h2>
+          <p className="mt-4 text-lg text-gray-600">One low price includes everything you need for a legal marriage ceremony.</p>
+          
+          <div className="mt-10 max-w-md mx-auto bg-white border border-gray-200 rounded-lg shadow-sm">
+            <div className="p-8">
+              <h3 className="text-2xl font-semibold">Complete Ceremony</h3>
+              <div className="mt-4 text-4xl font-bold text-rose-600">$299</div>
+              <p className="text-gray-500">Everything included</p>
+              
+              <ul className="mt-6 space-y-3 text-left">
+                <li className="flex items-center">
+                  <span className="text-green-500 mr-3">✓</span>
+                  Licensed officiant
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-500 mr-3">✓</span>
+                  Legal marriage certificate
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-500 mr-3">✓</span>
+                  30-minute ceremony
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-500 mr-3">✓</span>
+                  Unlimited guests
+                </li>
+                <li className="flex items-center">
+                  <span className="text-green-500 mr-3">✓</span>
+                  Ceremony recording
+                </li>
+              </ul>
+              
+              <Link 
+                href="/booking" 
+                className="mt-8 w-full bg-rose-600 text-white py-3 px-4 rounded-md font-medium hover:bg-rose-700 inline-block"
+              >
+                Book Your Ceremony
+              </Link>
+            </div>
+          </div>
+        </div>
+      </main>
 
       {/* Footer */}
-      <footer className="w-full border-t bg-slate-50 py-6 md:py-12">
-        <div className="container flex flex-col items-center justify-between gap-4 md:flex-row">
-          <div className="flex items-center gap-2">
-            <Heart className="h-6 w-6 text-rose-500" />
-            <span className="text-xl font-semibold">OnlineMarriagesNow</span>
+      <footer className="bg-gray-50 mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex justify-between items-center">
+            <span className="text-xl font-bold text-rose-600">OnlineMarriagesNow</span>
+            <div className="flex space-x-6">
+              <Link href="/terms" className="text-gray-500 hover:text-gray-900">Terms</Link>
+              <Link href="/privacy" className="text-gray-500 hover:text-gray-900">Privacy</Link>
+              <Link href="/contact" className="text-gray-500 hover:text-gray-900">Contact</Link>
+            </div>
           </div>
-          <p className="text-center text-sm text-muted-foreground md:text-left">
+          <div className="mt-8 text-center text-gray-500">
             © {new Date().getFullYear()} OnlineMarriagesNow. All rights reserved.
-          </p>
-          <div className="flex gap-4">
-            <Link href="/terms" className="text-sm text-muted-foreground hover:underline">
-              Terms
-            </Link>
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:underline">
-              Privacy
-            </Link>
-            <Link href="/contact" className="text-sm text-muted-foreground hover:underline">
-              Contact
-            </Link>
           </div>
         </div>
       </footer>
